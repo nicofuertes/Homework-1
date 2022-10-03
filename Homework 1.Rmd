@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       warning = FALSE)
 ```
 
-## Machine Learning Main Ides
+## Machine Learning Main Ideas
 
 ### Question 1
 
