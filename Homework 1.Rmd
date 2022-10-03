@@ -77,7 +77,7 @@ Predictive models are frequently used in machine learning, and they can usually 
 
   Following ISL and ESL:
 
-  - Mechanistic model: Also known as parametric methods because they make an assumption about the relationship between the independent variables and the dependent variable. In other words, these models assume a parametric form about the functional form, or shape of *f*. Even though this approach simplifies the problem of how to estimate *f*, the chosen functional form will not likely match the true form
+  - Mechanistic model: Also known as parametric methods because they make an assumption about the relationship between the independent variables and the dependent variable. In other words, these models assume a parametric form about the functional form, or shape of *f* which might not necessarily be the true one. Even though this approach simplifies the problem of how to estimate *f*, the chosen functional form will not likely match the true form
 
   - Empirically-driven model: Also known as non-parametric methods because they do not make explicit assumptions about the relationship between the independent variables and the dependent variable. In other words, these models make little (or no) assumptions about the functional form of *f*.
 
@@ -94,9 +94,10 @@ Predictive models are frequently used in machine learning, and they can usually 
   - Both models aim to estimate the functional form of *f*
 
 
+
 - In general, is a mechanistic or empirically-driven model easier to understand? Explain your choice.
 
-  In general, even thought mechanistic models are less flexible, they are easier to understand than empirically-driven models. The mechanistic models normally choose to fit a simple parametric functional form that is easy to interpret. For example, linear regressions are very easy to understand and more interpretable. 
+  In general, even though mechanistic models are less flexible, they are easier to understand than empirically-driven models. The mechanistic models normally choose to fit a simple parametric functional form that is easy to interpret. For example, linear regressions are very easy to understand and more interpretable. 
 
 
 - Describe how the bias-variance tradeoff is related to the use of mechanistic or empirically-driven models.
@@ -116,7 +117,7 @@ Classify each question as either predictive or inferential. Explain your reasoni
 
 **Answers** 
 
-- The first question only looks to predict the probability that a certain voter will vote in favor of the candidate. It is not loooking if a certain factor or variable has an impact or changes the probability. The campaign only cares about predicting accurately the probablity of voting. Hence, it is a predictve question.
+- The first question only looks to predict the probability that a certain voter will vote in favor of the candidate. It is not loooking if a certain factor or variable has an impact or changes the probability. The campaign only cares about predicting accurately the probablity of voting. Hence, it is a predictive question.
 
 - The second question is trying to understand whether having personal contact with the candidate changes (or causes an impact) on the voter's actions. This is a causation question as it tries to understand the relatioship between those two variables and it should be classified as an inferential question. Under this question the personal contact is our predictor variable and the voting decision is the outcome of interest.
 
@@ -205,6 +206,8 @@ Another important thing to mention about this graph is that cars with 4 and 5 cy
 Use the `corrplot` package to make a lower triangle correlation matrix of the `mpg` dataset.
 
 Which variables are positively or negatively correlated with which others? Do these relationships make sense to you? Are there any that surprise you?
+
+For this question, we need to select first the numeric variables only as we can't do correlations with the other ones. The first line in the code below shows this step.
 
 ```{r}
 # First we need to keep the numeric 
