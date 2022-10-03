@@ -85,14 +85,13 @@ Predictive models are frequently used in machine learning, and they can usually 
 
   - As explained above, mechanistic models make assumptions on the functional form of *f*, while empirically-driven do not make assumptions about it. Therefore, the empirically-driven models are more flexible than the mechanistic ones. 
   
-  - Given that empirically-driven models do not make assumptions about the functional form of *f*, they required a large number of observations for the estimation. In contrast, mechanistic models only required to estimate a small number of parameters.
+  - Given that empirically-driven models do not make assumptions about the functional form of *f*, they require a large number of observations for the estimation. In contrast, mechanistic models only required to estimate a small number of parameters.
   
   - Finally, empirically-driven models have a higher variance than mechanistic ones. However, mechanistic ones have higher bias than empirically-driven ones.
   
   **Similarities:**
   
   - Both models aim to estimate the functional form of *f*
-
 
 
 - In general, is a mechanistic or empirically-driven model easier to understand? Explain your choice.
@@ -119,7 +118,7 @@ Classify each question as either predictive or inferential. Explain your reasoni
 
 - The first question only looks to predict the probability that a certain voter will vote in favor of the candidate. It is not loooking if a certain factor or variable has an impact or changes the probability. The campaign only cares about predicting accurately the probablity of voting. Hence, it is a predictive question.
 
-- The second question is trying to understand whether having personal contact with the candidate changes (or causes an impact) on the voter's actions. This is a causation question as it tries to understand the relatioship between those two variables and it should be classified as an inferential question. Under this question the personal contact is our predictor variable and the voting decision is the outcome of interest.
+- The second question is trying to understand whether having personal contact with the candidate changes (or causes an impact) on the voter's actions. This is a causation question as it tries to understand the relatioship between those two variables and it should be classified as an inferential question. Under this question, the personal contact is our predictor variable and the voting decision is the outcome of interest.
 
 
 ## Exploratory Data Analysis
@@ -140,7 +139,7 @@ You should use the tidyverse and `ggplot2` for these exercises.
 
 We are interested in highway miles per gallon, or the `hwy` variable. Create a histogram of this variable. Describe what you see/learn.
 
-First, we need to load the libraries needed to produce the graphs and use the dataset
+First, we need to load the libraries needed to plot the graphs and use the dataset
 
 ```{r}
 library(tidyverse)
@@ -159,7 +158,7 @@ histogram_hwy
 
 As expected, the distribution of Highway miles per gallon seems to be skewed to the right. However, one unexpected thing about it is that it has two different peaks and the observations are concentrated around two different points. More concretely, there is a peak around 16 mpg and another at 26 mpg. This could probably reflect two different types of cars where the first ones use a lot of fuel and the others can save some fuel and end up with more miles per gallon. We would ideally want to have more information about the variable and how it differs based on the cars characteristics to draw more conclusions about these two peaks.
 
-Finally, it is important to note that most cars have less thatn 35 miles per gallon and very few of them are above 40. Based on our knowledge of cars and their technology this should not be a surprising pattern.
+Finally, it is important to note that most cars have less than 35 miles per gallon and very few of them are above 40. Based on our knowledge of cars and their technology this should not be a surprising pattern.
 
 ### Exercise 2
 
@@ -172,7 +171,7 @@ scatter_hwycty
 
 The scatterplot shows that apparently there is a positive linear correlation between highway miles per gallon and the city mileage. It is important to note that the scatterplot only allows to draw descriptive conclusions so it seems there is a relationship but not sure if one causes the other. However, it is not surprising that both `hwy` and `cty` move in the same direction given that both are different measures of fuel efficiency in cars and how the fuel is used by car.
 
-Another interesting pattern is that both variables are round numbers which does not seem plausible in every single case. It would be interesting to take a closer at the data to understand more why is it always round. Particularly, I think thinking about prediction and statistical modeling, it is useful when data reflects more accurately the reality and it does not sound plausibly that every single car produces a round number for both `hwy` and `cty`. Probably it would also be useful to do a scatterplot that is able to show the data more accurately and account for this issue.
+Another interesting pattern is that both variables are round numbers which does not seem plausible in every single case. It would be interesting to take a closer look at the data to understand more why it is always round. Particularly, for prediction and statistical modeling, it is useful when data reflects more accurately the reality and it does not sound plausible that every single car produces a round number for both `hwy` and `cty`. Probably it would also be useful to make a scatterplot that is able to show the data more accurately and account for this issue.
 
 
 ### Exercise 3
@@ -196,7 +195,7 @@ box_hwy =  ggplot(mpg) + geom_boxplot(aes(x = hwy, y = factor(cyl))) + labs(titl
 box_hwy
 ```
 
-There is a clear pattern between highway mpg and the number of cylinders based on this box plot. We can see that the mpg seems to decrease as we add one more cylinder to the car. It shwos that cars with 4 cylinders have on average the highest mpg while cars with 8 cylinders have the lowest. This result is not surprising as we know that cars with more cylinders tend to be less efficient as they require more fuel to work.
+There is a clear pattern between highway mpg and the number of cylinders based on this box plot. We can see that the mpg seems to decrease as we add one more cylinder to the car. It shows that cars with 4 cylinders have on average the highest mpg, while cars with 8 cylinders have the lowest. This result is not surprising as we know that cars with more cylinders tend to be less efficient as they require more fuel to work.
 
 Another important thing to mention about this graph is that cars with 4 and 5 cylinders seem to have very similar averages. However, it is important to account for the very small sample of 5 cylinder cars which could be having an impact in our statistics. This raises questions about whether we have enough data about the 5 cylinders cars to draw conclusions about them.
 
